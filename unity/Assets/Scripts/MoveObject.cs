@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class MoveObject : MonoBehaviour
+public class MoveObject : MonoBehaviourPunCallbacks
 {
     public bl_Joystick joystick; 
     public float speed;
@@ -11,36 +12,44 @@ public class MoveObject : MonoBehaviour
     public GameObject ParentList;
 
     // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
-        animator = GetComponent<Animator>();
-        joystick = GameObject.Find("Joystick").GetComponent<bl_Joystick>();
-        ParentList = GameObject.Find("BtnParent");
+        if (photonView.IsMine)
+        {
+            animator = GetComponent<Animator>();
+            joystick = GameObject.Find("Joystick").GetComponent<bl_Joystick>();
+            ParentList = GameObject.Find("BtnParent");
+        }
     }
-    
+   
+
     // Update is called once per frame
     void Update()
     {       
-            // 위치
-            moveVec = new Vector3(joystick.Horizontal, 0, joystick.Vertical) * speed * Time.deltaTime;
-            
-            /*tranform.position(tranform.position + moveVec);*/
-            transform.position = transform.position + moveVec;
-        if (moveVec == Vector3.zero)
+        if(joystick != null)
         {
-            animator.SetTrigger("A");
-            return;
-        }
-        else if (moveVec != Vector3.zero)
-        {
-            animator.SetTrigger("Walk");
-        }
-        // 회전 
-        if (moveVec.sqrMagnitude == 0) return; // input이 없으면 rotation 없음
 
-        Quaternion dirQuat = Quaternion.LookRotation(moveVec); // 게임 오브젝트의 3차원 방향을 저장
-        Quaternion moveQuat = Quaternion.Slerp(transform.rotation, dirQuat, 0.8f); // 회전 조작 
-        /* rigid.MoveRotation(moveQuat);*/
-        transform.rotation = moveQuat;
+                // 위치
+                moveVec = new Vector3(joystick.Horizontal, 0, joystick.Vertical) * speed * Time.deltaTime;
+            
+                /*tranform.position(tranform.position + moveVec);*/
+                transform.position = transform.position + moveVec;
+            if (moveVec == Vector3.zero)
+            {
+                animator.SetTrigger("A");
+                return;
+            }
+            else if (moveVec != Vector3.zero)
+            {
+                animator.SetTrigger("Walk");
+            }
+            // 회전 
+            if (moveVec.sqrMagnitude == 0) return; // input이 없으면 rotation 없음
+
+            Quaternion dirQuat = Quaternion.LookRotation(moveVec); // 게임 오브젝트의 3차원 방향을 저장
+            Quaternion moveQuat = Quaternion.Slerp(transform.rotation, dirQuat, 0.8f); // 회전 조작 
+            /* rigid.MoveRotation(moveQuat);*/
+            transform.rotation = moveQuat;
+        }
     }
 }
