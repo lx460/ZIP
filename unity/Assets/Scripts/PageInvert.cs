@@ -98,7 +98,22 @@ public class PageInvert : MonoBehaviour
 
 
     private void setActive(int panel){
-        for(int i=0; i<panels.Length; i++){
+        Debug.Log("thisthisthis");
+        if (panel == 0)
+        {
+            //PlayerUI 활성화
+            PlayerUI.isActive= true;
+            /*PlayerManager.isPlayerUIVisible= true;*/
+            Debug.Log("active");
+        }
+        else
+        {
+            //PlayerUI 비활성화
+            PlayerUI.isActive= false;
+            PlayerManager.isPlayerUIVisible = false;
+            Debug.Log("deactive");
+        }
+        for (int i=0; i<panels.Length; i++){
             if(i == panel){
                 panels[i].SetActive(true);
             } else {
@@ -108,8 +123,21 @@ public class PageInvert : MonoBehaviour
     }
 
     private void setActive(int[] panelList){
-        for(int i=0; i<panels.Length; i++){
+        Debug.Log("thisthisthis");
+        if (Array.Exists(panelList, idx => idx == (int)Panel.main))
+        {
+            /*PlayerManager.isPlayerUIVisible = true;*/
+            PlayerUI.isActive= true;
+        }
+        else
+        {
+            PlayerUI.isActive= false;
+            PlayerManager.isPlayerUIVisible = false;
+        }
+        for (int i=0; i<panels.Length; i++){
+            
             if(Array.Exists(panelList, idx => idx == i)){
+                
                 panels[i].SetActive(true);
             } else {
                 panels[i].SetActive(false);

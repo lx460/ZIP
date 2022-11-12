@@ -21,7 +21,6 @@ public class Photo : MonoBehaviour
 
     public void SetTexture(long pictureId)
     {
-        PhotoData photoData = null;
         Dictionary<long, RawData> albumData = DataManager.Instance.albumDicData;
         bool result = false; 
         UserAlbumData userAlbumData = new UserAlbumData();

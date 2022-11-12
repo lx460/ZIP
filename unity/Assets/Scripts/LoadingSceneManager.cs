@@ -20,7 +20,6 @@ public class LoadingSceneManager : MonoBehaviourPunCallbacks
     private float doneGage = 0;
     private float tempGage = 0;
     private string gameVersion = "1";
-    private static bool isAlbumLoaded = false;
     #endregion
 
     #region MonoBehaviour Callbacks
@@ -57,10 +56,8 @@ public class LoadingSceneManager : MonoBehaviourPunCallbacks
         {
             foreach (RawData data in furnitureData[positionId])
             {
-                bool temp = false;
                 if (((UserItemData)data).hasItemCode == 2)
                 {
-                    temp = true;
                     if (furnitureSet.ContainsKey(positionId))
                     {
                         furnitureSet.Remove(positionId);
@@ -77,10 +74,8 @@ public class LoadingSceneManager : MonoBehaviourPunCallbacks
         Dictionary<long, RawData> photoData = DataManager.Instance.userAlbumDicData;
         foreach (long albumId in photoData.Keys)
         {
-            bool temp = false;
             if (((UserAlbumData)photoData[albumId]).texture != null)
             {
-                temp = true;
                 if (photoSet.ContainsKey(albumId))
                 {
                     photoSet.Remove(albumId);
@@ -143,6 +138,7 @@ public class LoadingSceneManager : MonoBehaviourPunCallbacks
     #region Private Methods
     private void Connect()
     {
+        PhotonNetwork.NickName = DataManager.Instance.user.name;
         Debug.Log("connect");
         if (PhotonNetwork.IsConnected)
         {
@@ -265,7 +261,6 @@ public class LoadingSceneManager : MonoBehaviourPunCallbacks
             Debug.Log(data);
             DataManager.Instance.userAlbumDicData.Add(data.id, data);
         }
-        isAlbumLoaded = true;
     }
     private IEnumerator GetTexture(PhotoData picture)
     {
