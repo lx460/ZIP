@@ -274,6 +274,96 @@ app
 
 <br/>
 
+## :heavy_check_mark: 폴더 구조 - Unity
+
+```
+├── Assets
+│   ├── Adaptive Performance
+│   ├── Adaptive Performance.meta
+│   ├── Animation
+│   ├── Animation.meta
+│   ├── Editor
+│   ├── Editor.meta
+│   ├── Exoa
+│   ├── Exoa.meta
+│   ├── Fonts
+│   ├── Fonts.meta
+│   ├── Furniture_1
+│   ├── Furniture_1.meta
+│   ├── Images
+│   ├── Images.meta
+│   ├── NINESOFT_ASSETS
+│   ├── NINESOFT_ASSETS.meta
+│   ├── Photon
+│   ├── Photon.meta
+│   ├── Plugins
+│   ├── Plugins.meta
+│   ├── Readme.asset
+│   ├── Readme.asset.meta
+│   ├── Resources
+│   ├── Resources.meta
+│   ├── Scenes
+│   ├── Scenes.meta
+│   ├── Scripts
+│   ├── Scripts.meta
+│   ├── TextMesh Pro
+│   ├── TextMesh Pro.meta
+│   ├── TutorialInfo
+│   ├── TutorialInfo.meta
+│   ├── UJoystick
+│   ├── UJoystick.meta
+│   ├── _Heathen Engineering
+│   ├── _Heathen Engineering.meta
+│   ├── characters_5_02
+│   └── characters_5_02.meta
+├── Packages
+│   ├── manifest.json
+│   └── packages-lock.json
+├── ProjectSettings
+│   ├── AudioManager.asset
+│   ├── BurstAotSettings_Android.json
+│   ├── BurstAotSettings_StandaloneWindows.json
+│   ├── ClusterInputManager.asset
+│   ├── CommonBurstAotSettings.json
+│   ├── DynamicsManager.asset
+│   ├── EditorBuildSettings.asset
+│   ├── EditorSettings.asset
+│   ├── GraphicsSettings.asset
+│   ├── InputManager.asset
+│   ├── MemorySettings.asset
+│   ├── NavMeshAreas.asset
+│   ├── NotificationsSettings.asset
+│   ├── PackageManagerSettings.asset
+│   ├── Packages
+│   ├── Physics2DSettings.asset
+│   ├── PresetManager.asset
+│   ├── ProjectSettings.asset
+│   ├── ProjectVersion.txt
+│   ├── QualitySettings.asset
+│   ├── SceneTemplateSettings.json
+│   ├── TagManager.asset
+│   ├── TimeManager.asset
+│   ├── TimelineSettings.asset
+│   ├── UnityConnectSettings.asset
+│   ├── VFXManager.asset
+│   ├── VersionControlSettings.asset
+│   ├── XRSettings.asset
+│   └── boot.config
+├── androidBuild
+│   ├── build.gradle
+│   ├── gradle
+│   ├── gradle.properties
+│   ├── launcher
+│   ├── local.properties
+│   ├── settings.gradle
+│   └── unityLibrary
+└── androidBuild_BurstDebugInformation_DoNotShip
+    └── tempburstlibs
+
+```
+
+<br/>
+
 ## :heavy_check_mark: CI/CD
 
 ```
@@ -285,6 +375,8 @@ Ubuntu
 ```
 
 <br/>
+
+
 
 ## :heavy_check_mark: 페이지 기능 소개 
 
