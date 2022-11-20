@@ -184,7 +184,7 @@ SSAFY 7기 2학기 자율프로젝트 - ZIP
 ---
 
 - [중간발표자료](docs/중간발표자료.pptx)
-- [최종발표자료]()
+- [최종발표자료](docs/최종발표자료.pptx)
   <br/>
 
 ## :heavy_check_mark: 폴더 구조 - Frontend
