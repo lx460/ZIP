@@ -4,7 +4,7 @@
 
   **게이미피케이션 + 메타버스 결합 가족 소통 어플리케이션**
 
-- 📜 [노션](https://www.notion.so/1-Unity-650232b21f5841e8be9da51457735050)
+- 📜 [노션](https://www.notion.so/ZIP-846def57bc31437ea8e608ad5745990d)
 
 <br/>
 <br/>
