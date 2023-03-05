@@ -174,7 +174,7 @@ SSAFY 7기 2학기 자율프로젝트 - ZIP
 - [기능명세서](docs/기능명세서.xlsx)
 - [와이어프레임 & 스토리보드](docs/와이어프레임.png)
 - [프로젝트계획서](docs/프로젝트계획서.pdf)
-- [컨벤션&git](doc/컨벤션&Git.md)
+- [컨벤션&git](docs/컨벤션&Git.md)
 - [API명세서](docs/API명세서.xlsx)
 - [ERD](docs/ERD.png)
 - [테스트케이스](docs/테스트케이스.xlsx)
